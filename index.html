@@ -8,6 +8,16 @@
       content="APS Sport Calendar helps families and teams keep fixtures, training blocks, and season highlights in one view."
     />
     <title>APS Sport Calendar</title>
+    <script>
+      // GitHub Pages SPA routing: restore path stored by 404.html
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />

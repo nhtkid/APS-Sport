@@ -22,7 +22,7 @@ const viewTitles = {
   master: 'Master Calendar',
 }
 
-const assetBase = '/assets/aps-home'
+const assetBase = `${import.meta.env.BASE_URL}assets/aps-home`
 
 const socialLinks = [
   { label: 'Facebook', icon: 'facebook', color: 'facebook' },
