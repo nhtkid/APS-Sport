@@ -25,12 +25,12 @@ const viewTitles = {
 const assetBase = `${import.meta.env.BASE_URL}assets/aps-home`
 
 const socialLinks = [
-  { label: 'Facebook', icon: 'facebook', color: 'facebook' },
-  { label: 'X', icon: 'x', color: 'x' },
-  { label: 'Instagram', icon: 'instagram', color: 'instagram' },
-  { label: 'YouTube', icon: 'youtube', color: 'youtube' },
-  { label: 'Email', icon: 'email', color: 'email' },
-  { label: 'Team App', icon: 'teamapp', color: 'teamapp' },
+  { label: 'Facebook', icon: 'facebook', color: 'facebook', href: 'https://www.facebook.com/pages/APS-Sport/218410264837996' },
+  { label: 'X', icon: 'x', color: 'x', href: 'https://twitter.com/aps_sport' },
+  { label: 'Instagram', icon: 'instagram', color: 'instagram', href: 'https://instagram.com/aps_sport' },
+  { label: 'YouTube', icon: 'youtube', color: 'youtube', href: 'https://www.youtube.com/channel/UCJr4NUwxqDmRLhrF8LKx7ag' },
+  { label: 'Email', icon: 'email', color: 'email', href: 'mailto:aps@apssport.org.au' },
+  { label: 'Team App', icon: 'teamapp', color: 'teamapp', href: 'https://apssport.teamapp.com/' },
 ]
 
 const mainNavigation = [
@@ -221,9 +221,9 @@ function SiteChrome({ activePath, onNavigate }) {
           <div className="masthead-contact">M: 0417 512 174</div>
           <div className="social-row">
             {socialLinks.map((link) => (
-              <span className={`social-chip is-${link.color}`} key={link.label} aria-label={link.label}>
+              <a className={`social-chip is-${link.color}`} key={link.label} aria-label={link.label} href={link.href} target={link.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">
                 <HeaderIcon className="social-icon" name={link.icon} />
-              </span>
+              </a>
             ))}
           </div>
         </div>
@@ -462,9 +462,9 @@ function HomePage({ onNavigate }) {
           <div className="footer-right-col">
             <div className="footer-social-row">
               {socialLinks.map((link) => (
-                <span className={`social-chip is-${link.color} footer-social-chip`} key={link.label} aria-label={link.label}>
+                <a className={`social-chip is-${link.color} footer-social-chip`} key={link.label} aria-label={link.label} href={link.href} target={link.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer">
                   <HeaderIcon className="social-icon" name={link.icon} />
-                </span>
+                </a>
               ))}
             </div>
             <p className="footer-note-home">© 2026 APS Sport. All rights reserved.</p>
